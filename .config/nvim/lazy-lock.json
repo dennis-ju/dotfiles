@@ -1,0 +1,6 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "41d3b2a9dbf03774a2c92c376d8371dcca9710a9" },
+  "lush.nvim": { "branch": "main", "commit": "966aad1accd47fa11fbe2539234f81f678fef2de" },
+  "nvim-treesitter": { "branch": "master", "commit": "1d1c32b64b17b866152f29a3676a719cb6078028" },
+  "zenbones.nvim": { "branch": "main", "commit": "e2a3fda09b3da0d5a23182a8ffdf03c2c2771794" }
+}
