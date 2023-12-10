@@ -4,6 +4,7 @@ local config = function()
 			"c",
 			"lua",
 			"bash",
+      "python",
 		},
 		auto_install = true,
 	})
