@@ -13,6 +13,10 @@ local M = {}
 
 M.telescope = {
   {"<leader>tf", function() require('telescope.builtin').find_files() end, silent = true, desc = "Find in files"},
+  {"<leader>tg", function() require('telescope.builtin').grep_string() end, silent = true, desc = "Search for selected string"},
+  {"<leader>tl", function() require('telescope.builtin').live_grep() end, silent = true, desc = "Search for string"},
+  {"<leader>tk", function() require('telescope.builtin').keymaps() end, silent = true, desc = "Show normal mode keymaps"},
+  {"<leader>tb", function() require('telescope.builtin').buffers() end, silent = true, desc = "Show open buffers"},
 }
 
 M.neogit = {
@@ -76,6 +80,7 @@ M.gitsigns = function(buffer)
 	map("n", "<leader>hb", function()
 		gitsigns.blame_line({ full = true })
 	end, { silent = true, buffer = buffer, desc = "Blame hunk" })
+  map("n", "<leader>hp", gitsigns.preview_hunk, { silent = true, buffer = buffer, desc = "Preview Hunk" })
 end
 
 return M
