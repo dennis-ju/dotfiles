@@ -81,6 +81,7 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Spawn rofi in drun mode"),
+    Key([mod], "z", lazy.spawn("/home/dennisju/.local/bin/lock_screen"), desc="Locks screen with i3lock"),
 ]
 
 groups = [
