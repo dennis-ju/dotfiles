@@ -17,6 +17,8 @@ M.telescope = {
   {"<leader>tl", function() require('telescope.builtin').live_grep() end, silent = true, desc = "Search for string"},
   {"<leader>tk", function() require('telescope.builtin').keymaps() end, silent = true, desc = "Show normal mode keymaps"},
   {"<leader>tb", function() require('telescope.builtin').buffers() end, silent = true, desc = "Show open buffers"},
+  {"<leader>tr", function() require('telescope.builtin').lsp_references() end, silent = true, desc = "Show references to current symbol"},
+  {"<leader>ts", function() require('telescope.builtin').lsp_document_symbols() end, silent = true, desc = "Show all functions"},
 }
 
 M.neogit = {

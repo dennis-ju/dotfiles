@@ -6,7 +6,10 @@ local config = function()
     },
     pickers = {
       find_files = {
-	hidden = true
+	      hidden = true
+      },
+      lsp_document_symbols = {
+        symbols = 'function',
       },
     }
   })
@@ -17,7 +20,7 @@ end
 
 return {
     'nvim-telescope/telescope.nvim',
-     dependencies = { 
+     dependencies = {
 	'nvim-lua/plenary.nvim',
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
