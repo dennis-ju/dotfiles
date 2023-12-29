@@ -25,6 +25,10 @@ M.neogit = {
   {"gs", function() require('neogit').open() end, silent = true, desc = "Open neogit"},
 }
 
+M.lazygit = {
+  {"<leader>gg", function() require('lazygit').lazygit() end, silent = true, desc = "Open lazygit"},
+}
+
 M.global_lsp = function()
 	local map = vim.keymap.set
 	map("n", "]d", vim.diagnostic.goto_next, { silent = true, desc = "Next diagnostic" })
