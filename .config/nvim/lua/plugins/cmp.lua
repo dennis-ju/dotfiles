@@ -37,12 +37,9 @@ local function config()
 			return not in_comment() and not disallowed_buftype()
 		end,
 		mapping = {
-			["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
-			["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
-			["<PgUp>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-			["<PgDn>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-			["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-			["<C-e>"] = cmp.mapping({
+			["<C-e>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+			["<C-a>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+			["<Esc>"] = cmp.mapping({
 				i = cmp.mapping.abort(),
 				c = cmp.mapping.close(),
 			}),
@@ -64,10 +61,12 @@ local function config()
 			{
 				name = "nvim_lsp",
 				group_index = 2,
+        max_item_count = 5
 			},
 			{
 				name = "nvim_lua",
 				group_index = 3,
+        max_item_count = 5
 			},
 			{
 				name = "spell",
@@ -79,15 +78,18 @@ local function config()
 			{
 				name = "async_path",
 				group_index = 4,
+        max_item_count = 5
 			},
 			{
 				name = "calc",
 				group_index = 4,
+        max_item_count = 5
 			},
 			{
 				name = "buffer",
 				keyword_length = 3,
 				group_index = 5,
+        max_item_count = 5
 			},
 		},
 		formatting = {
@@ -123,9 +125,14 @@ local function config()
 	})
 
 	cmp.setup.cmdline("/", {
-		sources = {
-			{ name = "buffer" },
-		},
+    sources = {
+      {
+        name = "buffer",
+      },
+    },
+    view = {
+      entries = {name = 'wildmenu', separator = '|' }
+    },
 	})
 end
 
