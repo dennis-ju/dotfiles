@@ -134,8 +134,25 @@ local function config()
       entries = {name = 'wildmenu', separator = '|' }
     },
 	})
-end
 
+  cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+      {
+        name = 'path'
+      },
+      {
+        name = 'cmdline',
+        option = {
+          ignore_cmds = { 'Man', '!' }
+        }
+      },
+    }),
+    view = {
+      entries = {name = 'wildmenu', separator = '|' }
+    },
+  })
+
+end
 return {
 	{
 		"hrsh7th/nvim-cmp",
